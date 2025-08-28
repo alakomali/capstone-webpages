@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smishing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7e2e2;
+            margin: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(90deg, #007bff, #6c63ff, #28a745);
+            padding: 15px 0;
+        }
+
+        .navbar a {
+            color: rgb(17, 0, 57);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.2s ease;
+        }
+
+        .navbar a:hover {
+            color: rgb(17, 0, 57);
+            transform: scale(1.1);
+        }
+
+        /*.navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }*/
+
+        .navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+        }
+
+        .nav-link {
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+.nav-link:hover {
+    color: #ffc107;
+}
+
+        /* Hero Section 
+        .hero {
+            position: relative;
+            height: 25vh;
+            background: linear-gradient(to right, #ada667, #6c63ff);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        } */
+        .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+.hero-content h1 {
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+        .hero-content {
+            text-align: center;
+        }
+
+        /* Content Section */
+        .container {
+            padding: 20px;
+        }
+
+        img.img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        h2, h3 {
+            font-weight: bold;
+        }
+
+        ul.text-muted li {
+            margin-bottom: 10px;
+        }
+
+        /* Quiz Section */
+        .btn-success {
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #28a745;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+        .quiz-container {
+            max-width: 1300px; /* Set the container width */
+            margin: 0 auto; /* Center the container horizontally */
+            background: rgb(206, 185, 230); /* Optional background for contrast */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(214, 13, 13, 0.1);
+        }
+
+
+        .navbar {
+    background: #e7e2e2;/*linear-gradient(90deg, #2b5876, #4e4376, #1b2a49);*/
+    
+
+    padding: 15px 30px; /* Increased padding for better spacing */
+}
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+.hero {
+    background: linear-gradient(to right, #6c63ff, #4caf50), url('Images/hero-background.jpg') center/cover no-repeat;
+    color: #fff;
+    height: 35vh; /* Increased height for better visual impact */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.quiz-container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-success::before {
+    content: '\2714'; /* Checkmark icon */
+    margin-right: 10px;
+}
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Adjust height for smaller screens */
+        padding: 20px;
+        text-align: center;
+    }
+    .quiz-container {
+        padding: 15px;
+    }
+    .navbar-brand {
+        font-size: 18px;
+    }
+}
+footer {
+    background: linear-gradient(90deg, #333, #666);
+    color: #fff;
+    padding: 20px;
+}
+footer p {
+    margin: 0;
+    font-size: 14px;
+} 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.btn-success {
+    transition: all 0.3s ease;
+}
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+.navbar-nav ms-auto {
+    color: black;
+}
+
+        
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Phishing Awareness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="email-phishing.html"><i class="fas fa-envelope"></i> Email Phishing</a></li>
+    <li class="nav-item"><a class="nav-link" href="smishing.html"><i class="fas fa-comment"></i> Smishing</a></li>
+    <li class="nav-item"><a class="nav-link" href="vishing.html"><i class="fas fa-phone"></i> Vishing</a></li>
+</ul>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section 
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="display-4 fw-bold">Smishing</h1>
+            <p class="lead">Learn how to protect yourself from SMS phishing attacks.</p>
+        </div>
+    </div>-->
+    <div class="hero" style="background: linear-gradient(to right, #4b79a1, #283e51); color: white; padding: 100px 0;">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Smishing</h1>
+            <p class="lead">Learn how to identify and avoid smishing attacks.</p>
+            
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="container my-5">
+        <div class="row g-4 align-items-center">
+            <img src="Images/smishing-img.webp" alt="description" title="tooltip-text" style="max-width: 100%; height: 500px; border-radius: 15px;">
+
+            <!-- Text Content -->
+            <!--<div class="col-lg-6">-->
+                <h2>What is Smishing?</h2>
+                <p>
+                    Smishing is a form of cybercrime that targets individuals through text messages (SMS). The term "smishing" is derived from a combination of "SMS" (Short Message Service) and "phishing," a type of fraud where attackers attempt to obtain sensitive information such as login credentials, credit card details, or personal data. Unlike phishing emails, smishing relies on text messages sent directly to mobile phones, making it more personal and potentially harder for users to spot. The ultimate goal of smishing is to trick victims into taking actions that expose their personal data or cause financial loss. </p>
+                   <p> In smishing, the attacker utilizes mobile phone short messaging service, where an innocent looking text message from a recognized source such as a bank, government department or an online service providing company is sent to the victim. These messages bereauculate contain a link to a fake website or a phone number of the victim to call. When the victim clicks on the link or answer the number which has been provided, the attacker is able to steal his/her identity or plant virus to his/her gadget.                </p>
+                <h3>How Smishing Works</h3>
+                <ul>
+                    <p>Like most cybercrimes, smishing has a well-defined process which takes advantage of human behavior in one way or another, and this mostly involves the use of social engineering tricks to make the victim make a move. Here’s how it typically unfolds:</p>
+                    <li><strong>Malicious Text Message: </strong> The attacker transmits an SMS that is very believable; it may even contain the messaging logo of a bank or an e-commerce platform.</li>
+                    <li><strong>Urgent Call to Action:</strong> The message mostly includes an urgent call to action, for example the user needs to update his/her personal information, or the payment has been processed and the user should check it. The objective is to make the victim afraid or anxious so that they feel pressured to act fast without reason.</li>
+                    <li><strong>Suspicious Link or Phone Number: </strong> The SMS may contain a link or an email address that leads the user to a website which looks almost genuine. Instead, it may instruct the victim to dial a phone number and either give personal details over the phone or be convinced to download dangerous software.</li>
+                    <li><strong>Harvesting Sensitive Information:</strong> As soon as the victim engages for instance by visiting the fake website or replying to the phone number these scammers get the victim to reveal personal details which include credit card details, social security numbers and even login details. Such information can be utilised for cases of identity theft, scams, and any other vices as viewed by the user/|.</li>
+                    
+                </ul>
+                <h3>Common Smishing Tactics</h3>
+                <ul>
+                    <p>It appears that smishing attacks follow several steps that differ in the ways that they build trust and urgency. Here are some common smishing tactics used by attackers:</p>
+                    <li><strong> Bank Alerts:</strong>There is a popular scam in which one sends a simple text message that appears to come from your bank alerting you to some activity that’s been deemed suspicious or even asking if the recipient has been involved in a particular transaction. The message normally contains a link to a look-alike banking site whose main purpose is to snag your user name and password.</li>
+                    <li><strong>Delivery Service Scams: </strong>Another swindle is when the attackers pretend to be a delivery agency (FedEx or UPS) and inform that they failed to deliver anFFT. The message that you receive from the sender is always in a form of a request to click the link to reschedule the delivery or to input some of your personal details.</li>
+                    <li><strong>Prize or Sweepstakes Scams: </strong>Sweepstakes mailing involves sending a message to the victim telling them they have won a prize/sweepstakes and need to act fast to claim it. In this manner, the targets are told to click on a link or give CC details to pay “processing fees.”</li>
+                    <li><strong>Tax or Government Notices: </strong>At times the smishing messages may be from the government, including tax collectors or other organizations, to trick the victim and request for payment or identification details for legal purposes.</li>
+                    <li><strong>Account Verification Scams: </strong>Phishers may imitate a well-known service such as AIM or eBay, tell the victim that the account is restricted or hacked. They may use the account usernames and passwords by requesting for ‘authorization codes’ to the account through which they proceed and steal a client’s identity.                    </li>
+                </ul>
+                <h3>Real-Life Examples</h3>
+                <ul>
+                    <p><strong>Banking Smishing Example</strong></p>
+                    <p>In this smishing scenario, an individual receives an SMS that is appearing to be from their bank. They state in the message that the bank observed suspicious activities on the particular account and therefore says that the account may be locked and requests the details of the user. It contains a link that the victim is urged to click on – this link results to the downloading of the malware. This only is the beginning since once the victim clicks the link; he or she is taken to what seems like the official website of the bank. However the listed address is in fact a fake webpage meant to compromise login credentials to any site. Typically, the victim is asked to type their banking username and password, which he or she will do, thinking they are making their account more secure. The attacker employs the stolen account information to sign into the affected individuals bank account and siphon money, hence loss. It is also from this example that you understand how attackers leverage on time and the reliance clients have for their banks to make them disclose sensitive information.</p>
+                    <p><strong> Package Delivery Smishing</strong></p>
+                    <p>Using this example, a person gets a text message which contains a message likely from authorized delivery company such as UPS or FedEx. The message says that the company failed to deliver a package and provides a link to select a new delivery date. The target, waiting for their parcel, opens the email and clicks the link which re directs them to the replica site of the delivery service. But I’m glad I did not fall for it because this site is a complete fake and is made for the sole purpose of harvesting personal details. The victim is then instructed to input their address, phone number, or credit card number – used by the scammers to request the fees for a “re-delivery.” As soon as the victim fills in his/her details, the attacker is able to harvest all individual details and financial information. The stolen data can then be used for Identity theft or sold in the Dark web. This smishing attack exploits people’s confidence in certain services and their need to address delivery problems.</p>
+                </ul>
+                <h3>How to Spot a Smishing Attack</h3>
+                <ul>
+                    <p> It can sometimes be difficult to spot a smishing attack due to the convincing nature of the text messages. However, there are several signs you can look for to help identify a smishing attempt:</p>
+                    <li><strong>Suspicious Sender: </strong>Be careful with the number of the sender: Although you may be sure that it is from a reputable organisation, the aggressor may use nearly similar numbers, or they might use the ordinary phone numbers might seem odd.</li>
+                    <li><strong>Grammatical Errors: </strong>The language of smishing messages is practically appalling because they contain misspelled words, grammatical errors, and could be a sentence or two. This is a very strong sign that the message did not come from a genuine source.</li>
+                    <li><strong> Unsolicited Links: </strong> Never respond to any message containing any hyperlink if the message was not expected to be received. There is nothing wrong with following the link but simply put your cursor over the link and check the web address at the bottom left hand corner of the page to see if it actually takes you to the legitimate website. These links are fake or mistyped domains as they contain explicit or hidden maligntention of frauds.</li>
+                    <li><strong>Urgency or Threats: </strong>According to smishing messages, there is always a very short time within which the user must do something or lose his or her account or ability to use specific services.</li>
+                    <li><strong>Too Good to Be True Offers:</strong>The golden rule for such a message is if you have received what claims to be telling you that you have been awarded a lottery prize, free product, a service with what seems like a too good to be true offer then it most likely is. That is why scammers employ such strategies in order to make the victim share personal information.</li>
+                </ul>
+                <h3> How to Protect Yourself from Smishing</h3>
+                <ul>
+                    <p>While smishing attacks are increasingly sophisticated, there are several steps you can take to protect yourself and avoid falling victim to these scams:</p>
+                    <li><strong>Do Not Respond to Unsolicited Texts: </strong>So, if you received a text message from an unknown number or the number that requires your personal data, don’t respond. However, never respond to the message, rather report it to the organization via proper channels, to verify its credibility.</li>
+                    <li><strong>Verify Links and Phone Numbers: </strong> If a message includes another link or several links, most likely, it is a phishing message: when you move the cursor over the link, it will take you to another page. Today’s advice is to never open such links from the unknown sender. Furthermore, if they insist on calling a particular phone number, go ahead and use your own phone and search for the right phone number of the organization on the internet and call them with regard to the claim.</li>
+                    <li><strong>Enable Two-Factor Authentication (2FA): </strong> At any cost, turn on 2FA for your accounts. This has an added security feature of a second factor such as code that is sent to your phone or email.</li>
+                    <li><strong>Use Anti-Smishing Tools:</strong>Some of the mobile phone carriers provide feature or service that can block or filter smishing messages as follows. Further, to enhance the security measure from phishing and scams consider to install security application.</li>
+                    <li><strong>Report Suspicious Messages:</strong> If you get one such smishing message, forward it to your mobile service provider or local authority such as Federal Trade Commission (FTC) if you live in the United States or their equivalent in your country. Reporting in this case prevents anyone else from falling captive to similar cons.</li>
+                    <li><strong> Educate Yourself and Others: </strong>A lot of smishing attacks depend on social engineering and mistakes made by the user. Learn more on the current trends of smishing and pass the information to those you care about to avoid becoming a victim.</li>
+                </ul>
+                <h3>Conclusion</h3>
+                <p>Smishing is a relatively recent type of cyber threat targeting the trust and behavior of users of mobile phones. Knowing how smishing occurs and being aware of the possible scams one can learn how to protect themselves from transmitting their confidential data to the fraudsters behind these scams. Regularly take caution and proceed with caution when one receives or reads any message that is unfamiliar to him or her particularly those that one is being asked to submit or disclose some personal details or else act hastility.</p>
+                <p>And as long as you try to keep yourself as informed as possible and adhere to some of the basic rules of security mentioned above, the likelihood of you falling to smishing is greatly minimized.                </p>
+            <!--</div>
+             Image 
+            <div class="col-lg-6 text-center">
+                <img src="Images/SMISHING-ATTACK-PHASES.png" alt="Smishing Example" class="img-fluid rounded shadow-lg">
+            </div>
+        </div>
+    </div>-->
+
+    <!-- Quiz Section -->
+    <div class="quiz-container mx-auto">
+        <h3 class="text-center mb-4">Quiz: Smishing</h3>
+        <form id="smishingQuiz">
+            <!-- Add Name Input -->
+        <div class="mb-4">
+            <label for="userName" class="form-label"><strong>Your Name:</strong></label>
+            <input type="text" id="userName" class="form-control" placeholder="Enter your name" required>
+        </div>
+            <p><strong>1. What is a key trait of smishing messages?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion1" value="1">
+                <label class="form-check-label">Urgent language</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion1" value="0">
+                <label class="form-check-label">No links provided</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion1" value="0">
+                <label class="form-check-label">Polite tone</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion1" value="0">
+                <label class="form-check-label">Generic requests</label>
+            </div>
+            <br>
+            <p><strong>2. What should you do if you receive a suspicious SMS?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion2" value="0">
+                <label class="form-check-label">Forward it to contacts</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion2" value="0">
+                <label class="form-check-label">Reply to verify sender</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion2" value="1">
+                <label class="form-check-label">Avoid clicking and report the message</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion2" value="0">
+                <label class="form-check-label">Ignore the SMS</label>
+            </div>
+            <br>
+            <p><strong>3. What type of links are usually included in smishing messages?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion3" value="0">
+                <label class="form-check-label">Official and verified URLs</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion3" value="1">
+                <label class="form-check-label">Shortened or suspicious URLs</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion3" value="0">
+                <label class="form-check-label">Links to social media accounts</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion3" value="0">
+                <label class="form-check-label">Links to news articles</label>
+            </div>
+            <br>
+            <p><strong>4. How can you verify if a text message is legitimate?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion4" value="0">
+                <label class="form-check-label">Ignore the message</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion4" value="0">
+                <label class="form-check-label">Click the link to confirm</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion4" value="0">
+                <label class="form-check-label">Respond to the text</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="smishingQuestion4" value="1">
+                <label class="form-check-label">Contact the organization directly</label>
+            </div>
+        </form>
+        <div class="text-center">
+            <button type="button" class="btn btn-success mt-3" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+        <div class="result-section mt-4 text-center">
+            <canvas id="smishingResultChart" style="max-width: 150px; max-height: 150px;"></canvas>
+            <div id="answers" class="mt-4"></div>
+        <!-- Certificate Placeholder -->
+        <div id="certificate" class="mt-5"></div>
+        </div>
+        <!-- Next Button -->
+        <div class="text-center mt-5">
+            <a href="vishing.html" class="btn btn-primary" style="font-weight: bold; padding: 10px 20px;">Next: Vishing</a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Phishing Awareness. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function submitQuiz() {
+            const form = document.getElementById('smishingQuiz');
+            const userName = document.getElementById('userName').value.trim();
+            const answers = form.querySelectorAll('input[type="radio"]:checked');
+            const totalQuestions = 4;
+            let correctAnswers = 0;
+
+            if (!userName) {
+                alert('Please enter your name before submitting!');
+                return;
+            }
+
+            // Correct answers for each question
+            const correctKeys = {
+                smishingQuestion1: "1",
+                smishingQuestion2: "1",
+                smishingQuestion3: "1",
+                smishingQuestion4: "1",
+            };
+
+            if (answers.length < totalQuestions) {
+                alert('Please answer all questions before submitting!');
+                return;
+            }
+
+            answers.forEach(answer => {
+                if (answer.value === correctKeys[answer.name]) correctAnswers++;
+            });
+
+            const scorePercentage = (correctAnswers / totalQuestions) * 100;
+
+            const ctx = document.getElementById('smishingResultChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Correct', 'Incorrect'],
+                    datasets: [{
+                        data: [correctAnswers, totalQuestions - correctAnswers],
+                        backgroundColor: ['#28a745', '#dc3545'],
+                    }],
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                },
+            });
+
+            const answersDiv = document.getElementById('answers');
+            answersDiv.innerHTML = `
+                <h5>Your Score: ${scorePercentage.toFixed(2)}%</h5>
+                <p>${correctAnswers} out of ${totalQuestions} questions answered correctly.</p>
+            `;
+
+            const certificateDiv = document.getElementById('certificate');
+            if (scorePercentage >= 80) {
+                certificateDiv.innerHTML = `
+                    <div class="alert alert-success">
+                        <h4>Congratulations, ${userName}!</h4>
+                        <p>You scored above 80% and earned a certificate.</p>
+                        <a href="#" onclick="generateCertificate('${userName}', ${scorePercentage.toFixed(2)})" class="btn btn-primary">Download Certificate</a>
+                    </div>
+                `;
+            } else {
+                certificateDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        <h4>Sorry, ${userName}!</h4>
+                        <p>Your score is below 80%. Keep practicing to earn a certificate.</p>
+                    </div>
+                `;
+            }
+        }
+    // Generate certificate function
+    function generateCertificate(name, score) {
+    const certificateContent = `
+        <div style="
+            text-align: center; 
+            font-family: 'Georgia', serif; 
+            border: 10px solid #17a2b8; 
+            border-radius: 15px; 
+            padding: 30px; 
+            max-width: 600px; 
+            margin: auto; 
+            background: linear-gradient(145deg, #ffffff, #f0f9ff); 
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);">
+            <h1 style="font-size: 40px; color: #17a2b8; margin-bottom: 10px;">🎉 Certificate of Achievement 🎉</h1>
+            <p style="font-size: 18px; color: #555; margin-bottom: 30px;">This certificate is proudly presented to:</p>
+            <h2 style="font-size: 28px; color: #000; font-weight: bold; margin-bottom: 20px;">${name}</h2>
+            <p style="font-size: 16px; color: #555;">For achieving an outstanding score of:</p>
+            <h3 style="font-size: 26px; color: #17a2b8; margin-bottom: 30px;">${score}%</h3>
+            <p style="font-size: 16px; color: #555; margin-bottom: 30px;">
+                On the <strong>Smishing Quiz</strong><br>
+                Demonstrating exceptional knowledge of SMS phishing awareness.
+            </p>
+            <p style="font-size: 14px; color: #777;">Date: ${new Date().toLocaleDateString()}</p>
+            <p style="font-size: 14px; color: #777;">Verified by <strong>Phishing Awareness Initiative</strong></p>
+        </div>
+    `;
+
+    // Open a new window for the certificate
+    const certificateWindow = window.open('', '_blank');
+    certificateWindow.document.write(certificateContent);
+    certificateWindow.document.close();
+    certificateWindow.print();
+}
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Phishing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7e2e2;
+            margin: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(90deg, #007bff, #6c63ff, #28a745);
+            padding: 15px 0;
+        }
+
+        .navbar a {
+            color: rgb(17, 0, 57);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.2s ease;
+        }
+
+        .navbar a:hover {
+            color: rgb(17, 0, 57);
+            transform: scale(1.1);
+        }
+
+        /*.navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }*/
+
+        .navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+        }
+
+        .nav-link {
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+.nav-link:hover {
+    color: #ffc107;
+}
+
+        /* Hero Section 
+        .hero {
+            position: relative;
+            height: 25vh;
+            background: linear-gradient(to right, #ada667, #6c63ff);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        } */
+        .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+.hero-content h1 {
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+        .hero-content {
+            text-align: center;
+        }
+
+        /* Content Section */
+        .container {
+            padding: 20px;
+        }
+
+        img.img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        h2, h3 {
+            font-weight: bold;
+        }
+
+        ul.text-muted li {
+            margin-bottom: 10px;
+        }
+
+        /* Quiz Section */
+        .btn-success {
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #28a745;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+        .quiz-container {
+            max-width: 1300px; /* Set the container width */
+            margin: 0 auto; /* Center the container horizontally */
+            background: rgb(206, 185, 230); /* Optional background for contrast */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(214, 13, 13, 0.1);
+        }
+
+
+        .navbar {
+    background: #e7e2e2;/*linear-gradient(90deg, #2b5876, #4e4376, #1b2a49);*/
+    
+
+    padding: 15px 30px; /* Increased padding for better spacing */
+}
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+.hero {
+    background: linear-gradient(to right, #6c63ff, #4caf50), url('Images/hero-background.jpg') center/cover no-repeat;
+    color: #fff;
+    height: 35vh; /* Increased height for better visual impact */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.quiz-container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-success::before {
+    content: '\2714'; /* Checkmark icon */
+    margin-right: 10px;
+}
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Adjust height for smaller screens */
+        padding: 20px;
+        text-align: center;
+    }
+    .quiz-container {
+        padding: 15px;
+    }
+    .navbar-brand {
+        font-size: 18px;
+    }
+}
+footer {
+    background: linear-gradient(90deg, #333, #666);
+    color: #fff;
+    padding: 20px;
+}
+footer p {
+    margin: 0;
+    font-size: 14px;
+} 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.btn-success {
+    transition: all 0.3s ease;
+}
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+.navbar-nav ms-auto {
+    color: black;
+}
+
+        
+
+
+
+
+
+
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Phishing Awareness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="email-phishing.html"><i class="fas fa-envelope"></i> Email Phishing</a></li>
+    <li class="nav-item"><a class="nav-link" href="smishing.html"><i class="fas fa-comment"></i> Smishing</a></li>
+    <li class="nav-item"><a class="nav-link" href="vishing.html"><i class="fas fa-phone"></i> Vishing</a></li>
+</ul>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <!-- Hero Section 
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="display-4 fw-bold">Email Phishing</h1>
+            <p class="lead">Learn how to identify and avoid email phishing attacks.</p>
+        </div>
+    </div>-->
+
+    <!-- Hero Section -->
+<div class="hero" style="background: linear-gradient(to right, #4b79a1, #283e51); color: white; padding: 100px 0;">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">Email Phishing</h1>
+        <p class="lead">Learn how to identify and avoid email phishing attacks.</p>
+        
+    </div>
+</div>
+
+
+    <!-- Content Section -->
+    <div class="container my-5">
+        <div class="row g-4 align-items-center">
+            <img src="Images/phishing-email.webp" alt="description" title="tooltip-text" style="max-width: 100%; height: auto; border-radius: 15px;">
+            <!-- Text Content -->
+            <!--<div class="col-lg-6">-->
+                <h2>What is Email Phishing?</h2>
+                <p>
+                    Email phishing attacks are among the most widespread and well-known cyber threats. These attacks use deceptive emails to trick victims into revealing sensitive information, clicking malicious links, or downloading harmful attachments. Attackers often pose as legitimate organizations or individuals.
+                    Email phishing is a type of cyber attack where malicious actors send fraudulent emails that appear to come from trusted sources, like banks, companies, or colleagues. These emails are designed to deceive recipients into revealing personal information such as passwords, credit card numbers, or login credentials. Phishing is one of the most common and dangerous cyber threats, with attackers using social engineering techniques to manipulate their targets into taking harmful actions.
+                </p>
+                <h3>How Email Phishing Works</h3>
+                <ul>
+                    <p>Phishing attacks generally start off with an email carefully suited in a formal manner made to look like a legitimate communication. The attacker might impersonate a bank or information service and somehow create an illusion of urgency. The attacker might warn that if you do not verify your details quickly, your account will be suspended. Somewhere in the body of the email should be an attachment or link that, if accessed, will start to introduce infective materials into the computer of the victim.</p>
+                    <li><strong>Crafting the Email:</strong> The attackers use the official language of many organizations and make it appear to be obviously a reputable institution. </li>
+                    <li><strong>Deploying the Attack:</strong> The phishing emails create urgency or threats to make the victims act.</li>
+                    <li><strong>Harvesting Information:</strong> The victims innocently spill embossed sensitive information, like passwords and financial data. </li>
+                </ul>
+
+                <h3>Types of Email Phishing Attacks</h3>
+                <ul>
+                    <p>There are many types of phishing attacks targeting individuals or organizations. Among the most common are: </p>
+                   <li><strong> Deceptive Phishing:  </strong>the most common type of phishing where the attackers impersonate a trusted person or organization with the aim of stealing sensitive information or infecting the victim's computer with malware.</li> 
+                   <li><strong>Spear Phishing: </strong>Spear phishing is heavily targeted, simply crafted phishing that targets a specific individual or company: targeting," usually, with any information that is gathered through social networks or previous communications.</li>
+                   <li><strong>Whaling: </strong>Whaling is spear phishing aimed at high-profile targets, most often executives or senior management of a firm, to get a hold of sensitive corporate information.</li>
+                   <li><strong>Clone Phishing: </strong>The attacker sends a bogus email formatting the same way as the legitimate communication, inserting links to malicious websites or adding malware laden attachments. </li>
+                </ul>
+                <h3>Recognizing a Phishing Email</h3>
+                <ul>
+                    <p> Phishing emails exhibit certain common characteristics. Some of the signs to look for include the following:</p>
+                    <li><strong>Suspicious Sender Address: </strong>Phishing emails often are abstracted from a "legitimate" one, like a half-formed twin, with missing letters or numbers.</li>
+                    <li><strong>Generic Greetings: </strong>Phishing emails are more likely than not to use general phrases like "Dear Customer" or "Dear User," instead of using your actual name to address you.</li>
+                    <li><strong>Urgency or Threats: </strong>Phishing emails usually say that you must act immediately-otherwise they threaten servicing or lock the account of the victim or whoever.</li>
+                    <li><strong>Suspicious Links: </strong>Some links in phishing emails get URLs misspelled or not matching the official site of the organization they're claiming to be from, which the user was supposed to intuitively find out by moving the cursor over the links.</li>
+                    <li><strong>Grammatical Errors: </strong>A phishing email would be more lexical in a bad way, having various wrong usages, syntax errors, or weird phraseology. </li>
+                </ul>
+                <h3>How to Protect Yourself from Email Phishing</h3>
+                <ul>
+                    <p>To minimize the risk of falling for a phishing attack, it is important to follow these best practices:                    </p>
+                    <li><strong>Don’t Trust Unsolicited Emails: </strong> cautious with emails that ask for personal information or prompt immediate action, especially if they come from unknown sources.</li>
+                    <li><strong>Verify Suspicious Emails: </strong> the organization or person directly using known contact information to verify the authenticity of the email.                    </li>
+                    <li><strong>Check URLs Carefully: </strong>Before clicking on any link in an email, hover your mouse over it to check if the URL is legitimate.                    </li>
+                    <li><strong>Enable Multi-Factor Authentication: </strong>Enable multi-factor authentication (MFA) on your accounts to add an extra layer of security in case your credentials are compromised.                    </li>
+                    <li><strong>Keep Software Updated: </strong>Ensure your email client, web browser, and antivirus software are regularly updated to protect against the latest threats.                    </li>
+                </ul>
+
+                <h3>Phishing Attack Case Study: The Target Data Breach</h3>
+                <ul>
+                    <li>In 2013, a phishing attack targeted an HVAC vendor connected to the retail giant Target. Cybercriminals used phishing emails to steal the vendor’s login credentials, gaining access to Target’s network. As a result, sensitive data for over 40 million credit and debit card accounts was compromised, and the breach cost Target $18.5 million in settlements.</li>
+                    <li>This case illustrates how even small vulnerabilities in third-party systems can have massive consequences.</li>
+                </ul>
+                <h3>Psychological Manipulation in Phishing</h3>
+                <ul>
+                    <p>Phishing often relies on psychological tactics to manipulate victims. These include:</p>
+                    <li><strong>Fear: </strong>Threatening account closures or penalties if action isn’t taken immediately.</li>
+                    <li><strong>Greed: </strong>Promising financial rewards or lottery wins.</li>
+                    <li><strong>Curiosity: </strong>Sending vague messages like “Important document attached.”</li>
+                    <p>For example, an attack by an impersonator of the CEO of a designated prominent company, who had begun from sending emails to its personal employees in 2019, motivated the appropriate officials within the organization to comply, leading to financial losses running into several thousand dollars. </p>
+                </ul>
+                
+                    <h3>Phishing and Social Media</h3>
+                    <p>Social networking websites provide a rich opportunity for phishing attacks. Cybercriminals create false profiles designed to engender existing users' trust and thereafter send malicious links. The LinkedIn attacks in 2021, by which attackers masqueraded as recruiters offering tempting job deals, provide a good example here: they sent an application form with embedded malware that would compromise user devices. To stay safe, avoid clicking unsolicited links and check accounts before interacting. </p>
+                    
+                    
+                <h3>What to Do If You’re a Victim of Email Phishing</h3>
+                <ul>
+                <p>If you think you have been one of the victims of a phishing attack, act quickly: </p>
+                <li><strong>Change Your Passwords:</strong>  Change the passwords of any accounts that could be compromised.</li>
+                <li><strong>Notify Your IT Team: </strong>Notify your IT department if you're using work email, so they can secure your organization's systems.</li>
+                <li><strong>Monitor Financial Accounts: </strong> If you provided financial information, monitor your bank or credit card accounts for unauthorized transactions. </li>
+                <li><strong>Report the Phishing Attempt: </strong>Report the phishing attempt to your email service provider, and where appropriate, to the organization being claimed.  </li>
+            </ul>
+            <h3>Lessons from Real-Life Phishing Victims            </h3>
+            <ul>
+                <p>From 2013 to 2015, a Lithuanian cybercriminal successfully conducted a phishing scam against Google and Facebook. He impersonated a Taiwanese hardware manufacturer, sent fake invoices to the companies, and collected about $100 million before they discovered the fraud. The incident emphasizes the need to check requests for payments, especially when it comes to vendors.                </p>
+                <li><strong>Netflix Phishing Scam: </strong> widespread phishing campaign in 2020 sent fake emails claiming users needed to update their billing information. The fake Netflix site was nearly identical to the real one. Many users lost sensitive information.                </li>
+                <li><strong>PayPal Phishing Attack: </strong> 2021 scam involved emails alerting users of unauthorized transactions. Clicking the link led victims to a fake PayPal login page where credentials were stolen.                </li>
+                <p>These examples emphasize the importance of verifying emails and reporting suspicious activity.                </p>
+            </ul>
+            <h3> Conclusion: Stay Ahead of Phishing Attacks </h3>
+            <ul>
+                <p>Phishing is an ever-evolving threat that exploits human vulnerabilities and technological gaps. By staying informed about phishing tactics, learning from real-life cases, and implementing strong security practices, individuals and organizations can significantly reduce their risks.</p>
+                <p><strong>Remember: </strong>Cybersecurity is a shared responsibility. Always verify before you click, and educate yourself and others to build a safer digital environment.                </p>
+            </ul>
+
+
+            <!--</div>-->
+            <!-- Image -->
+            <!--<div class="col-lg-6 text-center">
+                <img src="Images/Phishing.jpg" alt="Email Phishing Example" class="img-fluid rounded shadow-lg">
+            </div>-->
+        <!--</div>-->
+    </div>
+    <div class="quiz-container mx-auto">
+        <h3 class="text-center mb-4">Quiz: Email Phishing</h3>
+        <form id="emailQuiz">
+        <!-- Add Name Input -->
+        <div class="mb-4">
+            <label for="userName" class="form-label"><strong>Your Name:</strong></label>
+            <input type="text" id="userName" class="form-control" placeholder="Enter your name" required>
+        </div>
+            <p><strong>1. Which of these is a phishing indicator?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion1" value="0">
+                <label class="form-check-label">Greetings from a known contact</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion1" value="1">
+                <label class="form-check-label">Grammatical errors and suspicious links</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion1" value="0">
+                <label class="form-check-label">Emails with no links</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion1" value="0">
+                <label class="form-check-label">Emails from official domains</label>
+            </div>
+            <br>
+            <p><strong>2. What is the purpose of phishing emails?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion2" value="0">
+                <label class="form-check-label">Sending newsletters</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion2" value="0">
+                <label class="form-check-label">Providing IT support</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion2" value="0">
+                <label class="form-check-label">Promoting verified services</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion2" value="1">
+                <label class="form-check-label">Stealing personal or financial data</label>
+            </div>
+            <br>
+            <p><strong>3. How can you verify an email's legitimacy?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion3" value="1">
+                <label class="form-check-label">Hover over links to check their destination</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion3" value="0">
+                <label class="form-check-label">Click the link to verify</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion3" value="0">
+                <label class="form-check-label">Respond to the email</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion3" value="0">
+                <label class="form-check-label">Ignore the email</label>
+            </div>
+            <br>
+            <p><strong>4. Which of these is a red flag in a phishing email?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion4" value="0">
+                <label class="form-check-label">A subscription reminder</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion4" value="0">
+                <label class="form-check-label">Emails from a trusted employer</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion4" value="1">
+                <label class="form-check-label">An urgent request for sensitive details</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="emailQuestion4" value="0">
+                <label class="form-check-label">A thank-you email</label>
+            </div>
+        </form>
+        <div class="text-center">
+            <button type="button" class="btn btn-success mt-3" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+        <div class="result-section mt-4 text-center">
+            <canvas id="emailResultChart" style="max-width: 150px; max-height: 150px;"></canvas> <!-- Reduced chart size -->
+            <div id="answers" class="mt-4"></div> <!-- To display answers -->
+            <!-- Certificate Placeholder -->
+        <div id="certificate" class="mt-5"></div>
+        </div>
+                <!-- Next Button -->
+                <div class="text-center mt-5">
+                    <a href="smishing.html" class="btn btn-primary" style="font-weight: bold; padding: 10px 20px;">Next: Smishing</a>
+                </div>
+    </div>
+                    
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Phishing Awareness. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+function submitQuiz() {
+    const form = document.getElementById('emailQuiz');
+    const userName = document.getElementById('userName').value.trim();
+    const answers = form.querySelectorAll('input[type="radio"]:checked');
+    const totalQuestions = 4;
+    let correctAnswers = 0;
+
+    if (!userName) {
+        alert('Please enter your name before submitting!');
+        return;
+    }
+
+    // Correct answers for each question
+    const correctKeys = {
+        emailQuestion1: "1",
+        emailQuestion2: "1",
+        emailQuestion3: "1",
+        emailQuestion4: "1",
+    };
+
+    // Validate if all questions are answered
+    if (answers.length < totalQuestions) {
+        alert('Please answer all questions before submitting!');
+        return;
+    }
+
+    // Compare user's answers with correct answers
+    answers.forEach(answer => {
+        if (answer.value === correctKeys[answer.name]) correctAnswers++;
+    });
+
+    // Calculate score percentage
+    const scorePercentage = (correctAnswers / totalQuestions) * 100;
+
+    // Display the results in a pie chart
+    const ctx = document.getElementById('emailResultChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Correct', 'Incorrect'],
+            datasets: [{
+                data: [correctAnswers, totalQuestions - correctAnswers],
+                backgroundColor: ['#28a745', '#dc3545'], // Green and red colors
+            }],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+        },
+    });
+
+    // Display detailed feedback
+    const answersDiv = document.getElementById('answers');
+    answersDiv.innerHTML = `
+        <h5>Your Score: ${scorePercentage.toFixed(2)}%</h5>
+        <p>${correctAnswers} out of ${totalQuestions} questions answered correctly.</p>
+    `;
+
+    // Check if the user is eligible for a certificate
+    const certificateDiv = document.getElementById('certificate');
+    if (scorePercentage >= 80) {
+        certificateDiv.innerHTML = `
+            <div class="alert alert-success">
+                <h4>Congratulations, ${userName}!</h4>
+                <p>You scored above 80% and earned a certificate.</p>
+                <a href="#" onclick="generateCertificate('${userName}', ${scorePercentage.toFixed(2)})" class="btn btn-primary">Download Certificate</a>
+            </div>
+        `;
+    } else {
+        certificateDiv.innerHTML = `
+            <div class="alert alert-danger">
+                <h4>Sorry, ${userName}!</h4>
+                <p>Your score is below 80%. Keep practicing to earn a certificate.</p>
+            </div>
+        `;
+    }
+}
+
+// Function to Generate Certificate
+function generateCertificate(name, score) {
+    const certificateContent = `
+        <div style="
+            text-align: center; 
+            font-family: 'Georgia', serif; 
+            border: 10px solid #007bff; 
+            border-radius: 15px; 
+            padding: 30px; 
+            max-width: 600px; 
+            margin: auto; 
+            background: linear-gradient(145deg, #ffffff, #f2f2f2); 
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);">
+            <h1 style="font-size: 40px; color: #007bff; margin-bottom: 10px;">📧🎉Certificate of Achievement 🎉📧</h1>
+            <p style="font-size: 18px; color: #555; margin-bottom: 30px;">This certificate is proudly presented to:</p>
+            <h2 style="font-size: 28px; color: #000; font-weight: bold; margin-bottom: 20px;">${name}</h2>
+            <p style="font-size: 16px; color: #555;">For achieving an outstanding score of:</p>
+            <h3 style="font-size: 26px; color: #2196f3; margin-bottom: 30px;">${score}%</h3>
+            <p style="font-size: 16px; color: #555; margin-bottom: 30px;">
+                On the <strong>Email Phishing Quiz</strong><br>
+                Demonstrating exceptional knowledge of phishing awareness.
+            </p>
+            <p style="font-size: 14px; color: #777;">Date: ${new Date().toLocaleDateString()}</p>
+            <p style="font-size: 14px; color: #777;">Verified by <strong>Phishing Awareness Initiative</strong></p>
+        </div>
+    `;
+
+    // Open a new window for the certificate
+    const certificateWindow = window.open('', '_blank');
+    certificateWindow.document.write(certificateContent);
+    certificateWindow.document.close();
+    certificateWindow.print();
+}
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

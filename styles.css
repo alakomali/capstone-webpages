@@ -1,0 +1,203 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e7e2e2;
+    margin: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: white; /* Gradient background */
+    text-align: center;
+    padding: 15px 0;
+    
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .quiz-container {
+        padding: 15px;
+    }
+
+    img.img-fluid {
+        max-width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .hero a {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+
+.navbar a {
+    color: rgb(17, 0, 57);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s ease; /* Smooth transition */
+}
+
+.navbar a:hover {
+    color: rgb(17, 0, 57); /* Yellow hover effect */
+    transform: scale(1.1); /* Slightly enlarges the link on hover */
+    
+}
+
+/*.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(223, 53, 53);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}*/
+.navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+        }
+
+        .nav-link {
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+.nav-link:hover {
+    color: #ffc107;
+}
+
+.navbar-brand:hover {
+    color: #ffc107; /* Yellow hover effect for the brand */
+}
+
+/* Hero Section 
+.hero {
+    position: relative;
+    height: 40vh; 
+    background: linear-gradient(to right, #ce0aa3, #6c63ff); 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); 
+    overflow: hidden; 
+}*/
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+.hero-content h1 {
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Images/phishing-hero.jpg') no-repeat center center/cover; /* Background image */
+    opacity: 0.5; /* Slight transparency to let the gradient show through */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Place content above the overlay */
+    text-align: center;
+    max-width: 600px; /* Restrict content width */
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem; /* Adjusted font size for better scaling */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.hero a {
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 50px; /* Rounded button */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.hero a:hover {
+    background-color: white;
+    color: #007bff; /* Blue text on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+/* Content Section */
+.responsive-image {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(226, 11, 11, 0.1);
+    margin: 20%;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff; /* Changes to white on hover */
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+

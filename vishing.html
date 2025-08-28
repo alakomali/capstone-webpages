@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7e2e2;
+            margin: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(90deg, #007bff, #6c63ff, #28a745);
+            padding: 15px 0;
+        }
+
+        .navbar a {
+            color: rgb(17, 0, 57);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.2s ease;
+        }
+
+        .navbar a:hover {
+            color: rgb(17, 0, 57);
+            transform: scale(1.1);
+        }
+
+        /*.navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }*/
+
+        .navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+        }
+
+        .nav-link {
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+.nav-link:hover {
+    color: #ffc107;
+}
+
+        /* Hero Section 
+        .hero {
+            position: relative;
+            height: 25vh;
+            background: linear-gradient(to right, #ada667, #6c63ff);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        } */
+        .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+.hero-content h1 {
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+        .hero-content {
+            text-align: center;
+        }
+
+        /* Content Section */
+        .container {
+            padding: 20px;
+        }
+
+        img.img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        h2, h3 {
+            font-weight: bold;
+        }
+
+        ul.text-muted li {
+            margin-bottom: 10px;
+        }
+
+        /* Quiz Section */
+        .btn-success {
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #28a745;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+        .quiz-container {
+            max-width: 1300px; /* Set the container width */
+            margin: 0 auto; /* Center the container horizontally */
+            background: rgb(206, 185, 230); /* Optional background for contrast */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(214, 13, 13, 0.1);
+        }
+
+
+        .navbar {
+    background: #e7e2e2;/*linear-gradient(90deg, #2b5876, #4e4376, #1b2a49);*/
+    
+
+    padding: 15px 30px; /* Increased padding for better spacing */
+}
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+.hero {
+    background: linear-gradient(to right, #6c63ff, #4caf50), url('Images/hero-background.jpg') center/cover no-repeat;
+    color: #fff;
+    height: 35vh; /* Increased height for better visual impact */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.quiz-container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-success::before {
+    content: '\2714'; /* Checkmark icon */
+    margin-right: 10px;
+}
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Adjust height for smaller screens */
+        padding: 20px;
+        text-align: center;
+    }
+    .quiz-container {
+        padding: 15px;
+    }
+    .navbar-brand {
+        font-size: 18px;
+    }
+}
+footer {
+    background: linear-gradient(90deg, #333, #666);
+    color: #fff;
+    padding: 20px;
+}
+footer p {
+    margin: 0;
+    font-size: 14px;
+} 
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.btn-success {
+    transition: all 0.3s ease;
+}
+.btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+.navbar-nav ms-auto {
+    color: black;
+}
+
+        
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Phishing Awareness</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="email-phishing.html"><i class="fas fa-envelope"></i> Email Phishing</a></li>
+    <li class="nav-item"><a class="nav-link" href="smishing.html"><i class="fas fa-comment"></i> Smishing</a></li>
+    <li class="nav-item"><a class="nav-link" href="vishing.html"><i class="fas fa-phone"></i> Vishing</a></li>
+</ul>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="display-4 fw-bold">Vishing</h1>
+            <p class="lead">Learn how to identify and protect yourself from voice phishing (vishing) attacks.</p>
+        </div>
+    </div>-->
+    <div class="hero" style="background: linear-gradient(to right, #4b79a1, #283e51); color: white; padding: 100px 0;">
+        <div class="hero-content">
+            <h1 class="display-4 fw-bold">Vishing</h1>
+            <p class="lead">Learn how to identify and avoid vishing attacks.</p>
+           
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="container my-5">
+        <div class="row g-4 align-items-center">
+            <img src="Images/vishing-img.webp" alt="description" title="tooltip-text" style="max-width: 100%; height: auto; border-radius: 15px;">
+
+            <!-- Text Content -->
+            <!--<div class="col-lg-6">-->
+                <h2>What is Vishing?</h2>
+                <p>
+                    Vishing, short for voice phishing, is a type of social engineering attack where an attacker uses phone calls or voice messages to deceive victims into revealing personal information, such as credit card numbers, bank account details, or other confidential data. The attacker typically impersonates a trusted individual or organization, such as a bank representative, government agency, or tech support personnel, to gain the victim’s trust. Vishing attacks rely on manipulation and urgency, pressuring the victim to act quickly and provide sensitive information over the phone.                </p>
+                <p>Unlike smishing, which uses text messages, vishing exploits the human tendency to trust phone calls, particularly when the caller presents themselves as someone in a position of authority or expertise. Vishing can be carried out using either live phone calls or automated voice messages (also known as robocalls).</p>
+                <h3>How Vishing Works</h3>
+                <ul>
+                    <p>Vishing attacks usually follow a few common steps designed to manipulate the victim:</p>
+                    <li><strong>Impersonation:</strong> The most common and typical example is the attacker claims to be from a recognizable and reliable source like a bank, government or technology support. They may even fake the number to make sure that the number on the ID is genuine.</li>
+                    <li><strong>Urgent Request: </strong> The attacker sets the victim in haste indicating that he had his/her account; hacked or that the account needs updating to avoid some set penalty or suspension.</li>
+                    <li><strong>Request for Sensitive Information: </strong> The attacker requests the victim’s personal information such as Social Security number, bank account, or credit card as part of identification or record update.</li>
+                    <li><strong>Follow-Up Actions: </strong>In some cases the attacker may trick the victim into calling the fraud support number or give further details in defending the breach, which also increases the odds of data theft.</li>
+                </ul>
+                <h3>Types of Vishing Attacks</h3>
+                <ul>
+                    <p>Vishing attacks can be classified into several categories based on their method or the impersonation used:</p>
+                    <li><strong>Tax-Related Vishing Scams: </strong>Some of the most common vishing calls involve matters to do with taxation. Ponzi scheme involves the thieves pretending to be the officials from the Internal Revenue Service (IRS) in the United States or any valid tax agency in any country. They might intimidate the victim with arrest, civilIAS, or huge fines with in the next hour if the amount is not paid. The victims are forced to pay through gift cards, wire transfers or any other method of which the payment cannot be traced by the authorities.</li>
+                    <li><strong>Tech Support Scams: </strong>In tech support vishing attacks, the scammer pretends to be a tech support personnel working for well-known tech company like Microsoft, Apple. The scammer says that the victim’s computer has been infiltrated by a virus or hacked, and requires fixing. They request the computer or the credit card details to “resolve” the problem. Victims of these attacks also often have additional malware installed, such as a remote access tool that the attacker uses to access their mates data.</li>
+                    <li><strong>Banking and Financial Scams</strong>In this form of vishing attack, the attacker pretends to be from a bank, or other credit card issuing company, and informs the victim of some unreasonable activities on his or her card. They then proceed to read to the victim some sensitive personal details such as last five PIN numbers, account numbers or full number of the credit card. The attacker may claim to help solve the problem but the main aim is to access the company’s financial information.</li>
+                    <li><strong>Prize and Sweepstakes Scams</strong>In prize or sweepstakes vishing scams, the victim is informed they have won a big prize, money or a sophisticated item such as a cell phone. However, for the victim to get the prize, they must re enter personal details like credit card numbers to ‘pay taxes’ or for ‘shipping.’ This is a method used to deceive the victim in other to get information relating to their accounts.</li>
+                    <li><strong>Medical Insurance Scams</strong>In this type of vishing attack, the scammer may claim to be coming from a medical insurance company, the victim’s policy has expired or the insurer needs the victim to confirm some details on insurance. Criminals can call them and demand to update or to renew the insurance policy by providing personal information like Social Security numbers or their banking account information.</li>
+                </ul>
+                <h3>Real-World Examples of Vishing Attacks</h3>
+                <strong>1. The IRS Vishing Scam</strong>
+                <p>For instance, a senior citizen gets a call from someone who introduces himself as an IRS agent. The caller told the victim that he/she did not pay back taxes that had been withheld, and said that he/she would be arrested if the victim failed to pay back immediately. The caller told the victim to visit the nearby store and buy gift cards then to read the numbers on the back of the cards. The victim agreed and was left with a loss of more than 2000 dollars.</p>
+                <strong> 2. Tech Support Vishing Attack                </strong>
+                <p>A woman was called by someone who pretends to be from Microsoft. He telephoned her and said that her computer had some virus that required more attention. They claimed they wanted to deal with the fault remotely on her computer and asked for her credit card to pay for the service. The woman was initially offered the access — which was a front for the payment — and her credit card was used to swindle her.</p>
+                <h3>How to Protect Yourself from Vishing</h3>
+                <ul>
+                    <p> To avoid vishing the key advice is to be very cautious and do not trust any unknown phone calls, specially those who are say that you need to provide presonal details. Here are some tips for protecting yourself from vishing attacks:</p>
+                    <li><strong>Don’t Trust Unsolicited Calls: </strong>Resist the urge to provide information to people we do not know on the phone when they claim to have knowledge of something about us we did not disclose. Businesses that you deal with are in most cases are never going to call you and ask you for such information.</li>
+                    <li><strong>Verify the Caller’s Identity: </strong>Do not engage in any conversation with the caller but end the call, then; contact the official number of the organisation or even the number given on the web site or in your account statement. Do not use any numbers given on the call.</li>
+                    <li><strong>Do Not Share Personal Information: </strong>Do not share personal details with any stranger by phone or any device even if he or she calls and claim to be from a certain organization that requires your social security number, bank account number or credit card number among others.</li>
+                    <li><strong>Look for Red Flags: </strong>Be wary of high-pressure tactics, threats, or promises of prizes. Scammers often create a sense of urgency to trick you into acting without thinking.</li>
+                    <li><strong>Use Call Blocking Tools:</strong> There are numerous applications available on mobile networks and third parties which are designed to deal with scam numbers. These tools may be used in a bid to minimizing the chances of falling victim to vishing calls.</li>
+                    <li><strong>Report Suspected Vishing Calls: </strong> If you receive vishing call, kindly inform your local police, your bank or any relevant organization. Reporting helps prevent other people from falling victims to similar assault by the defendant.                    </li>
+                </ul>
+                <h3>Conclusion</h3>
+                <p>Vishing is a very lethal form of social engineering that targets trust that people may repose in phone calls especially when a fraudster pretends to be calling from a legit organization or a local authority. Considering how vishing happens and what the scammers tend to do, one can prevent getting a victim of such frauds. If you receive any telephone calls out of the blue then ensure that you do not give out your identification details when asked to do so. Measures which can be has to taken in order to prevent the financial as well as personal loss from vishing attacks include.</p>
+            </div>
+            <!-- Image
+            <div class="col-lg-6 text-center">
+                <img src="Images/plain-vishing.png" alt="Vishing Example" class="img-fluid rounded shadow-lg">
+            </div>
+        </div>
+    </div>-->
+    <!-- Quiz Section -->
+    <div class="quiz-container mx-auto">
+        <h3 class="text-center mb-4">Quiz: Vishing</h3>
+        <form id="vishingQuiz">
+            <!-- Add Name Input -->
+        <div class="mb-4">
+            <label for="userName" class="form-label"><strong>Your Name:</strong></label>
+            <input type="text" id="userName" class="form-control" placeholder="Enter your name" required>
+        </div>
+            <p><strong>1. What should you do if someone asks for personal details over the phone?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion1" value="0">
+                <label class="form-check-label">Ignore the call</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion1" value="0">
+                <label class="form-check-label">Provide details if they sound legitimate</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion1" value="1">
+                <label class="form-check-label">Refuse and contact the organization directly</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion1" value="0">
+                <label class="form-check-label">Save the contact for future reference</label>
+            </div>
+            <br>
+            <p><strong>2. How can you detect a vishing attempt?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion2" value="1">
+                <label class="form-check-label">Caller uses threats or urgency</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion2" value="0">
+                <label class="form-check-label">Caller is polite and professional</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion2" value="0">
+                <label class="form-check-label">Caller provides useful tips</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion2" value="0">
+                <label class="form-check-label">Caller confirms your subscription</label>
+            </div>
+            <br>
+            <p><strong>3. What should you avoid doing during a suspicious call?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion3" value="0">
+                <label class="form-check-label">Reporting the call</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion3" value="0">
+                <label class="form-check-label">Asking for more details</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion3" value="0">
+                <label class="form-check-label">Ending the call</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion3" value="1">
+                <label class="form-check-label">Providing personal or financial details</label>
+            </div>
+            <br>
+            <p><strong>4. Which of the following is an example of vishing?</strong></p>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion4" value="0">
+                <label class="form-check-label">A promotional call from your favorite brand</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion4" value="1">
+                <label class="form-check-label">A call claiming your account is compromised</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion4" value="0">
+                <label class="form-check-label">A call confirming your doctor’s appointment</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="vishingQuestion4" value="0">
+                <label class="form-check-label">A call from your bank verifying recent transactions</label>
+            </div>
+        </form>
+        <div class="text-center">
+            <button type="button" class="btn btn-success mt-3" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+        <div class="result-section mt-4 text-center">
+            <canvas id="vishingResultChart" style="max-width: 150px; max-height: 150px;"></canvas>
+            <div id="answers" class="mt-4"></div>
+            <!-- Certificate Placeholder -->
+            <div id="certificate" class="mt-5"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Phishing Awareness. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+function submitQuiz() {
+    const form = document.getElementById('vishingQuiz');
+    const userName = document.getElementById('userName').value.trim();
+    const answers = form.querySelectorAll('input[type="radio"]:checked');
+    const totalQuestions = 4;
+    let correctAnswers = 0;
+
+    // Check for name input
+    if (!userName) {
+        alert('Please enter your name before submitting!');
+        return;
+    }
+
+    // Correct answers for each question
+    const correctKeys = {
+        vishingQuestion1: "1",
+        vishingQuestion2: "1",
+        vishingQuestion3: "1",
+        vishingQuestion4: "1",
+    };
+
+    // Ensure all questions are answered
+    if (answers.length < totalQuestions) {
+        alert('Please answer all questions before submitting!');
+        return;
+    }
+
+    // Check user's answers against correct answers
+    answers.forEach((answer) => {
+        if (answer.value === correctKeys[answer.name]) {
+            correctAnswers++;
+        }
+    });
+
+    // Calculate score percentage
+    const scorePercentage = (correctAnswers / totalQuestions) * 100;
+
+    // Render the pie chart
+    const ctx = document.getElementById('vishingResultChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Correct', 'Incorrect'],
+            datasets: [
+                {
+                    data: [correctAnswers, totalQuestions - correctAnswers],
+                    backgroundColor: ['#28a745', '#dc3545'], // Green and red
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+        },
+    });
+
+    // Display score and feedback
+    const answersDiv = document.getElementById('answers');
+    answersDiv.innerHTML = `
+        <h5>Your Score: ${scorePercentage.toFixed(2)}%</h5>
+        <p>${correctAnswers} out of ${totalQuestions} questions answered correctly.</p>
+    `;
+
+    // Show certificate if eligible
+    const certificateDiv = document.getElementById('certificate');
+    if (scorePercentage >= 80) {
+        certificateDiv.innerHTML = `
+            <div class="alert alert-success">
+                <h4>Congratulations, ${userName}!</h4>
+                <p>You scored above 80% and earned a certificate.</p>
+                <a href="#" onclick="generateCertificate('${userName}', ${scorePercentage.toFixed(
+                    2
+                )})" class="btn btn-primary">Download Certificate</a>
+            </div>
+        `;
+    } else {
+        certificateDiv.innerHTML = `
+            <div class="alert alert-danger">
+                <h4>Sorry, ${userName}!</h4>
+                <p>Your score is below 80%. Keep practicing to earn a certificate.</p>
+            </div>
+        `;
+    }
+}
+
+// Generate certificate function
+function generateCertificate(name, score) {
+    const certificateContent = `
+        <div style="
+            text-align: center; 
+            font-family: 'Georgia', serif; 
+            border: 10px solid #4caf50; 
+            border-radius: 15px; 
+            padding: 30px; 
+            max-width: 600px; 
+            margin: auto; 
+            background: linear-gradient(145deg, #ffffff, #ff2f2); 
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);">
+            <h1 style="font-size: 40px; color: #4caf50; margin-bottom: 10px;">🎉 Certificate of Achievement 🎉</h1>
+            <p style="font-size: 18px; color: #555; margin-bottom: 30px;">This certificate is proudly presented to:</p>
+            <h2 style="font-size: 28px; color: #000; font-weight: bold; margin-bottom: 20px;">${name}</h2>
+            <p style="font-size: 16px; color: #555;">For achieving an outstanding score of:</p>
+            <h3 style="font-size: 26px; color: #2196f3; margin-bottom: 30px;">${score}%</h3>
+            <p style="font-size: 16px; color: #555; margin-bottom: 30px;">
+                On the <strong>Vishing Quiz</strong><br>
+                Demonstrating exceptional knowledge of phishing awareness.
+            </p>
+            <p style="font-size: 14px; color: #777;">Date: ${new Date().toLocaleDateString()}</p>
+            <p style="font-size: 14px; color: #777;">Verified by <strong>Phishing Awareness Initiative</strong></p>
+        </div>
+    `;
+
+    // Open a new window for the certificate
+    const certificateWindow = window.open('', '_blank');
+    certificateWindow.document.write(certificateContent);
+    certificateWindow.document.close();
+    certificateWindow.print();
+}
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
